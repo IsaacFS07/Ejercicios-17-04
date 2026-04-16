@@ -111,30 +111,37 @@ class MainTest {
 
     @Test
     void divisiblePor4No100() {
-        assertTrue(Main.esBisiesto(2024));
+        assertTrue(Main.esBisiesto(2028));
     }
+
 
     @Test
     void divisiblePor100No400() {
-        assertFalse(Main.esBisiesto(1900));
+        assertFalse(Main.esBisiesto(1300));
     }
+
 
     @Test
     void divisiblePor400() {
-        assertTrue(Main.esBisiesto(2000));
+        assertTrue(Main.esBisiesto(2400));
     }
+
 
     @Test
     void noDivisiblePor4() {
         assertFalse(Main.esBisiesto(2023));
     }
 
+
+
     // 6 -------------------------------------------------------------------------------
 
     @Test
     void empate() {
-        assertEquals("EMPATE", Main.jugar("PIEDRA", "PIEDRA"));
+        assertEquals("EMPATE", Main.jugar("PAPEL", "PAPEL"));
     }
+
+
 
     @Test
     void ganaJugador1() {
@@ -143,8 +150,9 @@ class MainTest {
 
     @Test
     void ganaJugador2() {
-        assertEquals("JUGADOR2", Main.jugar("PAPEL", "TIJERA"));
+        assertEquals("JUGADOR2", Main.jugar("PAPEL", "PIEDRA"));
     }
+
 
     @Test
     void jugadaInvalida() {
@@ -155,16 +163,19 @@ class MainTest {
 
     @Test
     void passwordDebil() {
-        assertEquals("DEBIL", Main.clasificacionPassword(Main.evaluarPassword("abc")));
+        assertEquals("DEBIL", Main.clasificacionPassword(Main.evaluarPassword("123")));
     }
+
 
     @Test
     void passwordMedia() {
-        assertEquals("MEDIA", Main.clasificacionPassword(Main.evaluarPassword("Abc12345")));
+        assertEquals("MEDIA", Main.clasificacionPassword(Main.evaluarPassword("aeiDEF23")));
     }
+
 
     @Test
     void passwordFuerte() {
-        assertEquals("FUERTE", Main.clasificacionPassword(Main.evaluarPassword("Abc12345!")));
+        assertEquals("FUERTE", Main.clasificacionPassword(Main.evaluarPassword("ak2$sde1!!")));
     }
+
 }
